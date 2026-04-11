@@ -3,13 +3,13 @@ export const testimonials = [
     id: 1,
     name: "Punam Shrivastav",
     rating: 5,
-    quote: "Service and treatment is very good. Doctors and nursing staff are extremely polite and helpful. Best hospital in Palanpur for emergencies.",
+    quote: "Service and treatment is very good. Thank you for taking care of my father. I got fabulous experience in Divine as the doctors and staff are the best.",
   },
   {
     id: 2,
     name: "Rameshbhai Patel",
     rating: 5,
-    quote: "This hospital is very good and faithfulness. Clean environment and they care about the patient like a family member.",
+    quote: "This hospital is very good and faithfulness. This is rare one in the city. It was very positive experience since admission till discharge. Great job everyone.",
   },
   {
     id: 3,
