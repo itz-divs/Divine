@@ -68,32 +68,23 @@ const WhyChooseUs = () => {
              position: 'relative',
              overflow: 'hidden'
            }}>
-             {/* A placeholder for the image/illustration with nice soft curves */}
-             <div style={{
-               position: 'absolute',
-               bottom: '-10%',
-               right: '-10%',
-               width: '80%',
-               height: '80%',
-               backgroundColor: 'var(--color-accent)',
-               borderRadius: '50%',
-               opacity: 0.2
-             }}></div>
-             <div style={{
-               position: 'absolute',
-               top: '10%',
-               left: '-10%',
-               width: '60%',
-               height: '60%',
-               backgroundColor: 'var(--color-white)',
-               borderRadius: '50%',
-               opacity: 0.4
-             }}></div>
-             
-             <div className="flex flex-col items-center justify-center p-8 h-full text-center relative z-10">
-               <span style={{ fontSize: '4rem', marginBottom: '1rem' }}>🤝</span>
-               <h3 className="font-serif text-2xl color-text">Trust in Excellence</h3>
-               <p className="mt-4 opacity-80">Serving the Palanpur community with dedication.</p>
+             {/* Doctor's Photo */}
+             <img 
+               src="/images/why_choose_us_doctors_1775934201605.png" 
+               alt="Dedicated team of doctors" 
+               style={{
+                 width: '100%',
+                 height: '100%',
+                 objectFit: 'cover',
+                 position: 'absolute',
+                 top: 0,
+                 left: 0,
+                 zIndex: 0
+               }} 
+             />
+             <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', padding: '2rem', background: 'linear-gradient(transparent, rgba(0,0,0,0.8))', color: 'white', zIndex: 1, textAlign: 'center' }}>
+               <h3 className="font-serif text-2xl" style={{ color: '#fff' }}>Trust in Excellence</h3>
+               <p className="mt-2 opacity-90">Serving the Palanpur community with dedication.</p>
              </div>
            </div>
         </motion.div>

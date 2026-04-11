@@ -88,21 +88,18 @@ const Hero = () => {
              borderRadius: '50%',
              position: 'relative'
            }}>
-             {/* Using a placeholder aesthetic visual since actual SVG is missing, using CSS shapes to mock an abstract hospital icon */}
-             <div style={{
-               width: '200px',
-               height: '200px',
-               background: 'var(--color-white)',
-               borderRadius: '30px',
-               boxShadow: 'var(--shadow-hover)',
-               display: 'flex',
-               alignItems: 'center',
-               justifyContent: 'center',
-               position: 'relative'
-             }}>
-               <div style={{ position: 'absolute', width: '40px', height: '120px', backgroundColor: 'var(--color-accent)', borderRadius: '20px' }}></div>
-               <div style={{ position: 'absolute', width: '120px', height: '40px', backgroundColor: 'var(--color-accent)', borderRadius: '20px' }}></div>
-             </div>
+             {/* Real Photorealistic Graphic */}
+             <img 
+               src="/images/hero_hospital_graphic_1775934187293.png" 
+               alt="Divine Health Care Modern Hospital Facility" 
+               style={{
+                 width: '100%',
+                 height: '100%',
+                 objectFit: 'cover',
+                 borderRadius: '50%',
+                 boxShadow: 'var(--shadow-hover)'
+               }}
+             />
              
              {/* Floating elements */}
              <motion.div animate={{ y: [0, -15, 0] }} transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }} style={{ position: 'absolute', top: '10%', right: '15%', fontSize: '2rem', background: '#fff', borderRadius: '50%', padding: '10px', boxShadow: 'var(--shadow-soft)'}}>🩺</motion.div>
