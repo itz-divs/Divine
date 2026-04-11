@@ -2,12 +2,12 @@
 
 :root {
   /* Vanilla CSS Variables */
-  --color-lightest: #FCF8F8;
-  --color-light: #FBEFEF;
-  --color-mid: #F9DFDF;
-  --color-accent: #F5AFAF;
-  --color-deep: rgba(192, 80, 80, 0.31);
-  --color-deep-solid: #c05050;
+  --color-lightest: #F9F8F6;
+  --color-light: #EFE9E3;
+  --color-mid: #D9CFC7;
+  --color-accent: #C9B59C;
+  --color-deep: rgba(201, 181, 156, 0.31);
+  --color-deep-solid: #8b755b;
   --color-text: #2d2d2d;
   --color-white: #ffffff;
   --color-emergency: #e53e3e;
@@ -24,8 +24,8 @@
   --text-5xl: 3rem;
 
   --border-radius: 16px;
-  --shadow-soft: 0 4px 24px rgba(245, 175, 175, 0.15);
-  --shadow-hover: 0 10px 40px rgba(245, 175, 175, 0.25);
+  --shadow-soft: 0 4px 24px rgba(139, 117, 91, 0.15);
+  --shadow-hover: 0 10px 40px rgba(139, 117, 91, 0.25);
   --transition: all 0.3s ease;
 }
 
@@ -33,9 +33,9 @@
   --color-lightest: #121212;
   --color-light: #1e1e1e;
   --color-mid: #2d2d2d;
-  --color-accent: #c05050;
-  --color-deep: rgba(245, 175, 175, 0.1);
-  --color-deep-solid: #2d2d2d;
+  --color-accent: #C9B59C;
+  --color-deep: rgba(201, 181, 156, 0.1);
+  --color-deep-solid: #3d3d3d;
   --color-text: #e0e0e0;
   --color-white: #1a1a1a;
   --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.3);
