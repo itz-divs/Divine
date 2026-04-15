@@ -16,7 +16,7 @@ const ContactSection = () => {
           
           <div className="flex flex-col gap-6 font-medium">
             <div className="flex items-start gap-4">
-              <div style={{ padding: '12px', backgroundColor: 'var(--color-light)', borderRadius: '50%', color: 'var(--color-accent)' }}>
+              <div style={{ flexShrink: 0, width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--color-light)', borderRadius: '50%', color: 'var(--color-accent)' }}>
                 <FaMapMarkerAlt size={20} />
               </div>
               <div>
@@ -29,7 +29,7 @@ const ContactSection = () => {
             </div>
 
             <div className="flex items-start gap-4">
-              <div style={{ padding: '12px', backgroundColor: 'var(--color-light)', borderRadius: '50%', color: 'var(--color-accent)' }}>
+              <div style={{ flexShrink: 0, width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--color-light)', borderRadius: '50%', color: 'var(--color-accent)' }}>
                 <FaPhoneAlt size={20} />
               </div>
               <div>
@@ -41,7 +41,7 @@ const ContactSection = () => {
             </div>
 
             <div className="flex items-start gap-4">
-              <div style={{ padding: '12px', backgroundColor: 'var(--color-light)', borderRadius: '50%', color: 'var(--color-accent)' }}>
+              <div style={{ flexShrink: 0, width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--color-light)', borderRadius: '50%', color: 'var(--color-accent)' }}>
                 <FaEnvelope size={20} />
               </div>
               <div>
@@ -53,7 +53,7 @@ const ContactSection = () => {
             </div>
 
             <div className="flex items-start gap-4">
-              <div style={{ padding: '12px', backgroundColor: 'var(--color-light)', borderRadius: '50%', color: 'var(--color-accent)' }}>
+              <div style={{ flexShrink: 0, width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--color-light)', borderRadius: '50%', color: 'var(--color-accent)' }}>
                 <FaClock size={20} />
               </div>
               <div>
@@ -66,7 +66,7 @@ const ContactSection = () => {
 
             {/* Social */}
             <div className="mt-4 flex gap-4">
-              <a href="#" aria-label="Facebook" style={{ padding: '12px', backgroundColor: '#1877F2', borderRadius: '50%', color: '#fff' }}>
+              <a href="#" aria-label="Facebook" style={{ flexShrink: 0, width: '44px', height: '44px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1877F2', borderRadius: '50%', color: '#fff' }}>
                 <FaFacebookF size={20} />
               </a>
             </div>
