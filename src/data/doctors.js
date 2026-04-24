@@ -4,6 +4,7 @@ export const doctors = [
     specialty: "M.D. Medicine",
     dept: "Physician",
     initials: "NP",
+    photo: "/images/doctor_nirav.png",
     experience: "15+ Years",
     languages: ["English", "Hindi", "Gujarati"],
     schedule: "Mon – Sat | 9:00 AM – 1:00 PM, 5:00 PM – 8:00 PM",

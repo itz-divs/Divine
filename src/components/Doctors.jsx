@@ -71,16 +71,28 @@ const DoctorProfileModal = ({ doctor, onClose }) => {
           borderRadius: 'var(--border-radius) var(--border-radius) 0 0',
         }}>
           {/* Avatar */}
-          <div style={{
-            width: '100px', height: '100px', borderRadius: '50%',
-            backgroundColor: 'rgba(255,255,255,0.2)',
-            border: '3px solid rgba(255,255,255,0.5)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: '2.2rem', color: '#fff', fontWeight: 700,
-            marginBottom: '1rem',
-          }}>
-            {initials}
-          </div>
+          {doctor.photo ? (
+            <img
+              src={doctor.photo}
+              alt={doctor.name}
+              style={{
+                width: '110px', height: '110px', borderRadius: '50%',
+                objectFit: 'cover', border: '3px solid rgba(255,255,255,0.5)',
+                marginBottom: '1rem', boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+              }}
+            />
+          ) : (
+            <div style={{
+              width: '100px', height: '100px', borderRadius: '50%',
+              backgroundColor: 'rgba(255,255,255,0.2)',
+              border: '3px solid rgba(255,255,255,0.5)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: '2.2rem', color: '#fff', fontWeight: 700,
+              marginBottom: '1rem',
+            }}>
+              {initials}
+            </div>
+          )}
           <h3 className="font-serif text-2xl" style={{ color: '#fff', marginBottom: '4px', textAlign: 'center' }}>
             {doctor.name}
           </h3>
@@ -257,22 +269,28 @@ const Doctors = () => {
                   aria-label={`View profile of ${doc.name}`}
                   style={{ cursor: 'pointer' }}
                 >
-                  <div style={{
-                    width: '100px',
-                    height: '100px',
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, var(--color-mid) 0%, var(--color-accent) 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '2rem',
-                    color: '#fff',
-                    marginBottom: '1rem',
-                    fontWeight: 'bold',
-                    boxShadow: 'var(--shadow-soft)'
-                  }}>
-                    {initials}
-                  </div>
+                  {doc.photo ? (
+                    <img
+                      src={doc.photo}
+                      alt={doc.name}
+                      style={{
+                        width: '100px', height: '100px', borderRadius: '50%',
+                        objectFit: 'cover', marginBottom: '1rem',
+                        boxShadow: 'var(--shadow-soft)',
+                        border: '3px solid var(--color-accent)',
+                      }}
+                    />
+                  ) : (
+                    <div style={{
+                      width: '100px', height: '100px', borderRadius: '50%',
+                      background: 'linear-gradient(135deg, var(--color-mid) 0%, var(--color-accent) 100%)',
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontSize: '2rem', color: '#fff', marginBottom: '1rem',
+                      fontWeight: 'bold', boxShadow: 'var(--shadow-soft)',
+                    }}>
+                      {initials}
+                    </div>
+                  )}
                   <h3 className="font-serif text-xl" style={{ marginBottom: '0.25rem' }}>{doc.name}</h3>
                   <div style={{
                     backgroundColor: 'var(--color-light)',
