@@ -1,24 +1,32 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const appointmentRoute = require('./routes/appointment.js');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:4173'],
-  methods: ['POST'],
-}));
+app.use(cors());
 app.use(express.json());
 
-// Routes
+// API Routes
 app.use('/api/send-appointment', appointmentRoute);
 
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', service: 'Divine Health Care API' });
+});
+
+// ── Serve Vite build in production ──
+// After `npm run build`, the static files are in ../dist
+const distPath = path.join(__dirname, '..', 'dist');
+app.use(express.static(distPath));
+
+// For any non-API route, serve index.html (SPA fallback)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(distPath, 'index.html'));
 });
 
 // Start server
