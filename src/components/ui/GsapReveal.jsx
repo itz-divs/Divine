@@ -12,7 +12,8 @@ const GsapReveal = ({
   delay = 0,
   duration = 0.6,
   y = 50,
-  threshold = 0.2
+  threshold = 0.2,
+  ...rest
 }) => {
   const ref = useRef(null);
 
@@ -37,7 +38,7 @@ const GsapReveal = ({
   }, { scope: ref });
 
   return (
-    <div ref={ref} className={className} style={{ opacity: 0, ...style }}>
+    <div ref={ref} className={className} style={{ opacity: 0, ...style }} {...rest}>
       {children}
     </div>
   );
