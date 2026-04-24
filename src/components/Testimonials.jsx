@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaStar, FaQuoteLeft, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import GsapReveal from './ui/GsapReveal';
 import { testimonials } from '../data/testimonials';
 
 const Testimonials = () => {
@@ -19,12 +20,12 @@ const Testimonials = () => {
   return (
     <section className="section-padding" style={{ backgroundColor: 'var(--color-lightest)' }}>
       <div className="container relative">
-        <div className="text-center" style={{ marginBottom: '3rem' }}>
+        <GsapReveal className="text-center" style={{ marginBottom: '3rem' }}>
           <h2 className="text-4xl">Patient Testimonials</h2>
           <p className="mt-2 opacity-80">What our community says about us.</p>
-        </div>
+        </GsapReveal>
 
-        <div className="flex justify-center" style={{ minHeight: '280px', position: 'relative' }}>
+        <GsapReveal delay={0.2} className="flex justify-center" style={{ minHeight: '280px', position: 'relative' }}>
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -57,7 +58,7 @@ const Testimonials = () => {
               <p className="text-sm opacity-70">Patient</p>
             </motion.div>
           </AnimatePresence>
-        </div>
+        </GsapReveal>
 
         {/* Controls */}
         <div className="flex justify-center gap-4 mt-6">

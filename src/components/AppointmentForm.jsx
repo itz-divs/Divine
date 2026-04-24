@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { motion } from 'framer-motion';
+import GsapReveal from './ui/GsapReveal';
 import toast from 'react-hot-toast';
 import { doctors } from '../data/doctors';
 
@@ -36,11 +36,7 @@ const AppointmentForm = () => {
     <section id="appointment" className="section-padding" style={{ backgroundColor: 'var(--color-mid)' }}>
       <div className="container grid grid-cols-2 md:grid-cols-1 items-center gap-8">
         
-        <motion.div
-           initial={{ opacity: 0, x: -30 }}
-           whileInView={{ opacity: 1, x: 0 }}
-           viewport={{ once: true }}
-        >
+        <GsapReveal>
           <h2 className="text-4xl" style={{ marginBottom: '1rem' }}>Book an Appointment</h2>
           <p className="text-lg" style={{ opacity: 0.8, marginBottom: '2rem' }}>
             Schedule your visit with our expert doctors. Fill out the form and our reception team will confirm your slot within 30 minutes.
@@ -51,12 +47,10 @@ const AppointmentForm = () => {
                 <a href="tel:+919099113388" className="color-emergency font-bold">+91 90991 13388</a>
              </div>
           </div>
-        </motion.div>
+        </GsapReveal>
 
-        <motion.div
-           initial={{ opacity: 0, scale: 0.95 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           viewport={{ once: true }}
+        <GsapReveal
+           delay={0.2}
            className="card"
         >
           <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
@@ -130,7 +124,7 @@ const AppointmentForm = () => {
               {isSubmitting ? 'Sending Request...' : 'Submit Request'}
             </button>
           </form>
-        </motion.div>
+        </GsapReveal>
 
       </div>
     </section>

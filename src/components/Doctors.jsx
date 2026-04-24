@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { doctors } from '../data/doctors';
+import GsapReveal from './ui/GsapReveal';
 
 const Doctors = () => {
   const [filter, setFilter] = useState('All');
@@ -17,16 +18,13 @@ const Doctors = () => {
   return (
     <section id="doctors" className="section-padding">
       <div className="container">
-        <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
+        <GsapReveal
            className="text-center"
            style={{ marginBottom: '3rem' }}
         >
           <h2 className="text-4xl">Meet Our Specialists</h2>
           <p className="mt-2 opacity-80">Highly qualified experts dedicated to your health.</p>
-        </motion.div>
+        </GsapReveal>
 
         {/* Filter Tabs */}
         <div className="flex justify-center gap-4" style={{ marginBottom: '2.5rem', flexWrap: 'wrap' }}>

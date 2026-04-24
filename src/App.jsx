@@ -1,18 +1,18 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Toaster } from 'react-hot-toast';
 
 import EmergencyBanner from './components/EmergencyBanner';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import StatsBar from './components/StatsBar';
-import Services from './components/Services';
-import WhyChooseUs from './components/WhyChooseUs';
-import Doctors from './components/Doctors';
-import AppointmentForm from './components/AppointmentForm';
-import Testimonials from './components/Testimonials';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
+const StatsBar = lazy(() => import('./components/StatsBar'));
+const Services = lazy(() => import('./components/Services'));
+const WhyChooseUs = lazy(() => import('./components/WhyChooseUs'));
+const Doctors = lazy(() => import('./components/Doctors'));
+const BookAppointment = lazy(() => import('./components/BookAppointment'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const ContactSection = lazy(() => import('./components/ContactSection'));
+const Footer = lazy(() => import('./components/Footer'));
 
 import Loader from './components/ui/Loader';
 import FloatingAction from './components/ui/FloatingAction';
@@ -46,18 +46,22 @@ function App() {
           
           <main>
             <Hero />
-            <StatsBar />
-            <Services />
-            <WhyChooseUs />
-            <Doctors />
-            <Testimonials />
-            <AppointmentForm />
-            <ContactSection />
+            <Suspense fallback={<Loader isLoading={true} />}>
+              <StatsBar />
+              <Services />
+              <WhyChooseUs />
+              <Doctors />
+              <Testimonials />
+              <BookAppointment />
+              <ContactSection />
+            </Suspense>
           </main>
           
-          <Footer />
-          <FloatingAction />
-          <ThemeToggle />
+          <Suspense fallback={null}>
+            <Footer />
+            <FloatingAction />
+            <ThemeToggle />
+          </Suspense>
           
           <Toaster position="bottom-center" />
         </div>

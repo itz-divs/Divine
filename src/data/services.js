@@ -24,7 +24,7 @@ export const services = [
       "Thyroid & Cholesterol Management",
       "Comprehensive Elderly/Geriatric Care"
     ],
-    image: null
+    image: "/images/pexels-gorden-murah-surabaya-28799425-7250788.jpg"
   },
   {
     iconType: "FaLungs",
@@ -37,7 +37,7 @@ export const services = [
       "Specialized Nebulization & Bipap Support",
       "Oxygen Delivery Optimization"
     ],
-    image: null
+    image: "/images/pexels-gorden-murah-surabaya-28799425-7563452.jpg"
   },
   {
     iconType: "FaBone",
@@ -50,7 +50,7 @@ export const services = [
       "Arthritis & Degenerative Bone Therapy",
       "Post-Surgical Physiotherapy Guidance"
     ],
-    image: null
+    image: "/images/pexels-odin-reyna-383507-8410647.jpg"
   },
   {
     iconType: "FaHeart",
@@ -63,7 +63,7 @@ export const services = [
       "Blood Pressure Stabilization",
       "Post-Attack Cardiac Nursing"
     ],
-    image: null
+    image: "/images/pexels-saulozayas-4966406.jpg"
   },
   {
     iconType: "FaMicroscope",
@@ -76,6 +76,6 @@ export const services = [
       "Rapid Recovery Appendectomy",
       "Minor Day-Care General Procedures"
     ],
-    image: null
+    image: "/images/pexels-saulozayas-4966406.jpg"
   }
 ];

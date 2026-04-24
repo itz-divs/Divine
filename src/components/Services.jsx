@@ -1,19 +1,13 @@
-import { motion } from 'framer-motion';
 import { services } from '../data/services';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import GsapReveal from './ui/GsapReveal';
 import * as Icons from 'react-icons/fa';
 import { FaCheck } from 'react-icons/fa';
 
 const Services = () => {
-  const { ref, controls, variants } = useScrollAnimation();
-
   return (
     <section id="services" className="section-padding">
-      <div className="container" ref={ref}>
-        <motion.div
-          initial="hidden"
-          animate={controls}
-          variants={variants}
+      <div className="container">
+        <GsapReveal
           className="text-center"
           style={{ marginBottom: '3rem' }}
         >
@@ -24,22 +18,18 @@ const Services = () => {
           <p style={{ color: 'var(--color-text)', opacity: 0.8, marginTop: '1rem', maxWidth: '600px', margin: '1rem auto 0 auto' }}>
             Comprehensive healthcare services tailored to your needs. Explore specialized departments equipped with modern and advanced medical tech.
           </p>
-        </motion.div>
+        </GsapReveal>
 
         <div className="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
           {services.map((service, index) => {
             const IconComponent = Icons[service.iconType] || Icons.FaHeartbeat;
             
             return (
-              <motion.div
+              <GsapReveal
                 key={index}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.1 } }
-                }}
+                delay={index * 0.1}
+                y={30}
+                duration={0.5}
                 className="card flex flex-col items-start gap-4"
                 style={{
                   padding: service.image ? '0' : '2rem',
@@ -100,7 +90,7 @@ const Services = () => {
                     Learn More →
                   </a>
                 </div>
-              </motion.div>
+              </GsapReveal>
             )
           })}
         </div>

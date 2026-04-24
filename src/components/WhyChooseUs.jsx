@@ -1,9 +1,7 @@
-import { motion } from 'framer-motion';
 import { FaCheckCircle } from 'react-icons/fa';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import GsapReveal from './ui/GsapReveal';
 
 const WhyChooseUs = () => {
-  const { ref, controls, variants } = useScrollAnimation(0.3);
 
   const features = [
     "24×7 Emergency & ICU Facility",
@@ -14,13 +12,9 @@ const WhyChooseUs = () => {
 
   return (
     <section id="about" className="section-padding" style={{ backgroundColor: 'var(--color-light)' }}>
-      <div className="container grid grid-cols-2 md:grid-cols-1 items-center gap-6" ref={ref}>
+      <div className="container grid grid-cols-2 md:grid-cols-1 items-center gap-6">
         {/* Left: Text Content */}
-        <motion.div
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-        >
+        <GsapReveal>
           <span className="font-sans color-accent text-sm font-bold" style={{ textTransform: 'uppercase', letterSpacing: '1px' }}>
             About Our Hospital
           </span>
@@ -35,27 +29,23 @@ const WhyChooseUs = () => {
           
           <ul className="flex flex-col gap-4">
             {features.map((feature, i) => (
-              <motion.li 
+              <GsapReveal 
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 + 0.3, duration: 0.4 }}
+                delay={i * 0.15 + 0.3}
+                duration={0.4}
                 className="flex items-center gap-4 text-lg font-medium"
               >
                 <FaCheckCircle className="color-accent" style={{ fontSize: '1.25rem' }} />
                 {feature}
-              </motion.li>
+              </GsapReveal>
             ))}
           </ul>
-        </motion.div>
+        </GsapReveal>
 
         {/* Right: Visual */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.7 }}
+        <GsapReveal
+          delay={0.2}
+          duration={0.7}
           className="flex justify-center"
         >
            <div style={{
@@ -87,7 +77,7 @@ const WhyChooseUs = () => {
                <p className="mt-2 opacity-90">Serving the Palanpur community with dedication.</p>
              </div>
            </div>
-        </motion.div>
+        </GsapReveal>
       </div>
     </section>
   );

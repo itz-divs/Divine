@@ -1,5 +1,5 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock, FaFacebookF } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import GsapReveal from './ui/GsapReveal';
 
 const ContactSection = () => {
   return (
@@ -7,11 +7,7 @@ const ContactSection = () => {
       <div className="container grid grid-cols-2 md:grid-cols-1 gap-8 items-center">
         
         {/* Contact Info */}
-        <motion.div
-           initial={{ opacity: 0, x: -30 }}
-           whileInView={{ opacity: 1, x: 0 }}
-           viewport={{ once: true }}
-        >
+        <GsapReveal>
           <h2 className="text-4xl" style={{ marginBottom: '1.5rem' }}>Contact & Location</h2>
           
           <div className="flex flex-col gap-6 font-medium">
@@ -71,13 +67,11 @@ const ContactSection = () => {
               </a>
             </div>
           </div>
-        </motion.div>
+        </GsapReveal>
 
         {/* Map */}
-        <motion.div
-           initial={{ opacity: 0, scale: 0.95 }}
-           whileInView={{ opacity: 1, scale: 1 }}
-           viewport={{ once: true }}
+        <GsapReveal
+           delay={0.2}
            style={{ borderRadius: 'var(--border-radius)', overflow: 'hidden', height: '400px', boxShadow: 'var(--shadow-soft)' }}
         >
           <iframe 
@@ -90,7 +84,7 @@ const ContactSection = () => {
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-        </motion.div>
+        </GsapReveal>
 
       </div>
     </section>
