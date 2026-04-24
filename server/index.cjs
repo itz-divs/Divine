@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const appointmentRoute = require('./routes/appointment.js');
+const appointmentRoute = require('./routes/appointment.cjs');
 
 const app = express();
 const PORT = process.env.PORT || 3001;

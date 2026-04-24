@@ -1,6 +1,6 @@
 const express = require('express');
 const { Resend } = require('resend');
-const { getPatientEmailHtml, getAdminEmailHtml } = require('../emailTemplates.js');
+const { getPatientEmailHtml, getAdminEmailHtml } = require('../emailTemplates.cjs');
 
 const router = express.Router();
 

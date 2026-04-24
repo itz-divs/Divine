@@ -5,11 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "server": "node server/index.js",
+    "server": "node server/index.cjs",
     "dev:all": "concurrently \"npm run dev\" \"npm run server\"",
+    "start": "node server/index.cjs",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
